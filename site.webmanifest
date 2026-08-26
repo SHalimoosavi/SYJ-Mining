@@ -1,0 +1,16 @@
+{
+  "name": "SYJ Mining Platform",
+  "short_name": "SYJ Mining",
+  "description": "Engineering-first mining software by SAYANJALI NEXUS PRIVATE LIMITED.",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#0a0d10",
+  "theme_color": "#0a0d10",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

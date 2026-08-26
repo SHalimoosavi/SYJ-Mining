@@ -1,0 +1,658 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>SYJ Mining Platform | Engineering-First Mining Software</title>
+<meta name="description" content="SYJ Mining Platform is an engineering-focused mining software project by SAYANJALI NEXUS PRIVATE LIMITED, built around RandomX evaluation, telemetry, benchmark verification, and reproducible qualification." />
+<link rel="canonical" href="https://shalimoosavi.github.io/SYJ-Mining/" />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="SAYANJALI NEXUS PRIVATE LIMITED" />
+<meta name="publisher" content="SAYANJALI NEXUS PRIVATE LIMITED" />
+<meta name="theme-color" content="#0a0d10" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="SYJ Mining Platform" />
+<meta property="og:title" content="SYJ Mining Platform | Engineering-First Mining Software" />
+<meta property="og:description" content="A transparent, measurement-driven mining platform focused on reproducible execution, telemetry, artifact integrity, and controlled performance qualification." />
+<meta property="og:url" content="https://shalimoosavi.github.io/SYJ-Mining/" />
+<meta property="og:image" content="https://shalimoosavi.github.io/SYJ-Mining/assets/images/og-image.svg" />
+<meta property="og:locale" content="en_US" />
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="SYJ Mining Platform | Engineering-First Mining Software" />
+<meta name="twitter:description" content="Transparent, measurement-driven mining software. Reproducible qualification, not marketing claims." />
+<meta name="twitter:image" content="https://shalimoosavi.github.io/SYJ-Mining/assets/images/og-image.svg" />
+<meta name="twitter:site" content="@SHAliMoosavi" />
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+<link rel="manifest" href="site.webmanifest" />
+<link rel="stylesheet" href="assets/css/styles.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://shalimoosavi.github.io/SYJ-Mining/#organization",
+      "name": "SAYANJALI NEXUS PRIVATE LIMITED",
+      "url": "https://shalimoosavi.github.io/SYJ-Mining/",
+      "sameAs": [
+        "https://github.com/SHalimoosavi",
+        "https://github.com/SHalimoosavi/SYJ-Mining"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://shalimoosavi.github.io/SYJ-Mining/#website",
+      "url": "https://shalimoosavi.github.io/SYJ-Mining/",
+      "name": "SYJ Mining Platform",
+      "publisher": { "@id": "https://shalimoosavi.github.io/SYJ-Mining/#organization" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://shalimoosavi.github.io/SYJ-Mining/#software",
+      "name": "SYJ Mining Platform",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Not yet publicly verified",
+      "softwareVersion": "In development",
+      "description": "An engineering-focused mining software project emphasizing controlled execution, benchmark verification, hardware telemetry, artifact integrity, and evidence-driven qualification.",
+      "author": { "@id": "https://shalimoosavi.github.io/SYJ-Mining/#organization" },
+      "codeRepository": "https://github.com/SHalimoosavi/SYJ-Mining",
+      "url": "https://shalimoosavi.github.io/SYJ-Mining/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://shalimoosavi.github.io/SYJ-Mining/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://shalimoosavi.github.io/SYJ-Mining/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://shalimoosavi.github.io/SYJ-Mining/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is SYJ Mining Platform?",
+          "acceptedAnswer": { "@type": "Answer", "text": "SYJ Mining Platform is an engineering-focused mining software project developed by SAYANJALI NEXUS PRIVATE LIMITED. It emphasizes controlled execution, benchmark verification, hardware telemetry, artifact integrity, and evidence-driven qualification rather than speculative performance claims." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is RandomX?",
+          "acceptedAnswer": { "@type": "Answer", "text": "RandomX is a proof-of-work algorithm designed for general-purpose CPUs. It is the current mining execution path under engineering evaluation within SYJ Mining Platform." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is SYJ Mining Platform open source?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The project's source is developed in the open at github.com/SHalimoosavi/SYJ-Mining. Formal licensing terms will be published in the repository; check the repository directly for the current license file before assuming reuse rights." }
+        },
+        {
+          "@type": "Question",
+          "name": "What hardware does SYJ Mining Platform support?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Hardware and operating system support is not yet publicly verified. The current qualification harness targets general-purpose CPU execution; specific supported configurations will be published once confirmed." }
+        },
+        {
+          "@type": "Question",
+          "name": "How does SYJ Mining Platform verify benchmark integrity?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Every qualification run performs pre-run and post-run SHA-256 verification of the execution artifact, alongside timestamped telemetry and raw stdout/stderr capture, so results can be traced back to a known, unmodified binary." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does measurement qualification automatically enable mining?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. Measurement qualification is intentionally separated from economic and execution authorization. A qualified benchmark does not by itself set economics_authorized or execution_enabled to true." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does SYJ Mining Platform guarantee profitability?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. The project does not claim or guarantee mining profitability. Its scope is measurement, verification, and qualification methodology, not financial return." }
+        },
+        {
+          "@type": "Question",
+          "name": "Where is the source code?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The source repository is at https://github.com/SHalimoosavi/SYJ-Mining." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="#hero">
+      <span class="brand-mark" aria-hidden="true">SYJ</span>
+      SYJ Mining Platform
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation menu">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M2 4.5H16M2 9H16M2 13.5H16" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+    </button>
+    <nav class="nav-links" id="primary-nav" aria-label="Primary">
+      <a href="#platform">Platform</a>
+      <a href="#technology">Technology</a>
+      <a href="#verification">Verification</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="#faq">FAQ</a>
+      <a class="nav-cta" href="https://github.com/SHalimoosavi/SYJ-Mining" target="_blank" rel="noopener">GitHub ↗</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============================= HERO ============================= -->
+  <section id="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Development · SAYANJALI NEXUS PRIVATE LIMITED</p>
+        <h1 class="hero-title">Engineering-first <span class="accent">mining software.</span></h1>
+        <p class="hero-desc">
+          SYJ Mining Platform is a transparent, measurement-driven mining platform focused on
+          reproducible execution, telemetry, artifact integrity, and controlled performance
+          qualification. No performance claims without evidence. No economic authorization
+          without a passed gate.
+        </p>
+        <div class="hero-ctas">
+          <a class="btn btn--primary" href="https://github.com/SHalimoosavi/SYJ-Mining" target="_blank" rel="noopener">Explore on GitHub</a>
+          <a class="btn btn--ghost" href="#technical-overview">View Documentation</a>
+          <a class="btn btn--quiet" href="#verification">Engineering Verification →</a>
+        </div>
+        <div class="hero-meta">
+          <div class="hero-meta-item">STATUS<strong>Active engineering</strong></div>
+          <div class="hero-meta-item">EXECUTION PATH<strong>RandomX (evaluation)</strong></div>
+          <div class="hero-meta-item">ECONOMICS AUTHORIZED<strong>false</strong></div>
+        </div>
+      </div>
+
+      <div class="ledger" aria-label="Illustrative fail-closed authorization ledger">
+        <div class="ledger-head">
+          <span>QUALIFICATION_LEDGER.md</span>
+          <span class="ledger-dot" aria-hidden="true"></span>
+        </div>
+        <div class="pulse-line" aria-hidden="true">
+          <svg viewBox="0 0 400 46" preserveAspectRatio="none">
+            <path class="pulse-path" d="M0 23 L30 23 L40 8 L50 38 L60 23 L100 23 L110 14 L120 32 L130 23 L400 23" />
+          </svg>
+        </div>
+        <div class="ledger-body">
+          <div class="ledger-row"><span>artifact_integrity_verified</span><span class="ledger-state on">true</span></div>
+          <div class="ledger-row"><span>telemetry_capture</span><span class="ledger-state on">true</span></div>
+          <div class="ledger-row"><span>repeatability_evaluated</span><span class="ledger-state off">false</span></div>
+          <div class="ledger-row"><span>economics_authorized</span><span class="ledger-state off">false</span></div>
+          <div class="ledger-row"><span>execution_enabled</span><span class="ledger-state off">false</span></div>
+        </div>
+        <div class="ledger-foot">
+          Illustrative representation of the qualification state model described in
+          <a class="kicker-link" href="#security">Fail-Closed by Design</a>. Not live telemetry.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= ABOUT / PLATFORM ============================= -->
+  <section id="platform">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">About SYJ Mining Platform</p>
+        <h2 class="section-title">What SYJ Mining Platform is, in one paragraph</h2>
+        <p class="section-lede">
+          SYJ Mining Platform is an engineering-focused mining software project developed by
+          SAYANJALI NEXUS PRIVATE LIMITED. The project emphasizes controlled execution, benchmark
+          verification, hardware telemetry, artifact integrity, and evidence-driven qualification.
+          It is not positioned with superlative performance or profitability claims —
+          those are not made on this page.
+        </p>
+      </div>
+
+      <div class="grid grid--4" id="technical-overview">
+        <div class="card">
+          <div class="card-top"><h3>Product</h3></div>
+          <p>SYJ Mining Platform, developed by SAYANJALI NEXUS PRIVATE LIMITED.</p>
+        </div>
+        <div class="card">
+          <div class="card-top"><h3>Purpose</h3></div>
+          <p>Reproducible mining execution with measurement, verification, and telemetry as first-class engineering concerns.</p>
+        </div>
+        <div class="card">
+          <div class="card-top"><h3>Current technology</h3></div>
+          <p>RandomX execution path under evaluation, paired with a controlled qualification harness.</p>
+        </div>
+        <div class="card">
+          <div class="card-top"><h3>Repository</h3></div>
+          <p><a class="kicker-link" href="https://github.com/SHalimoosavi/SYJ-Mining" target="_blank" rel="noopener">github.com/SHalimoosavi/SYJ-Mining</a></p>
+        </div>
+        <div class="card">
+          <div class="card-top"><h3>Verification methodology</h3></div>
+          <p>Artifact hashing, thermal and DVFS telemetry, external power evidence, and 3-run repeatability analysis.</p>
+        </div>
+        <div class="card">
+          <div class="card-top"><h3>Current limitations</h3></div>
+          <p>No published benchmark results yet. Hardware and OS support not yet publicly verified. Economic authorization is disabled.</p>
+        </div>
+        <div class="card">
+          <div class="card-top"><h3>Current development state</h3></div>
+          <p>Active engineering on the qualification and telemetry harness. See <a class="kicker-link" href="#roadmap">Roadmap</a>.</p>
+        </div>
+        <div class="card">
+          <div class="card-top"><h3>Roadmap</h3></div>
+          <p>Qualification infrastructure → external power evidence campaign → repeatability validation → economic evaluation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= EVIDENCE-FIRST ENGINEERING ============================= -->
+  <section id="technology">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Differentiator</p>
+        <h2 class="section-title">Evidence-first engineering</h2>
+        <p class="section-lede">
+          Every claim this platform makes about its own performance is expected to trace back to
+          a verifiable artifact: a hash, a timestamp, a telemetry sample, or a repeatability
+          statistic. Measurement qualification is intentionally kept separate from economic
+          authorization — see <a class="kicker-link" href="#security">Fail-Closed by Design</a>.
+        </p>
+      </div>
+      <div class="grid grid--3">
+        <div class="card">
+          <div class="card-top"><h3>Artifact integrity</h3><span class="badge badge--implemented">Implemented</span></div>
+          <p>SHA-256 verification of the execution artifact before and after every qualification run.</p>
+        </div>
+        <div class="card">
+          <div class="card-top"><h3>Deterministic gates</h3><span class="badge badge--implemented">Implemented</span></div>
+          <p>Qualification proceeds through explicit, ordered gates; a failed gate halts the run rather than silently continuing.</p>
+        </div>
+        <div class="card">
+          <div class="card-top"><h3>Thermal telemetry</h3><span class="badge badge--implemented">Implemented</span></div>
+          <p>Continuous 500&nbsp;ms sampling of CPU temperature across the qualification window.</p>
+        </div>
+        <div class="card">
+          <div class="card-top"><h3>CPU / DVFS telemetry</h3><span class="badge badge--implemented">Implemented</span></div>
+          <p>Frequency and dynamic voltage/frequency scaling state captured alongside thermal data.</p>
+        </div>
+        <div class="card">
+          <div class="card-top"><h3>Repeatability testing</h3><span class="badge badge--dev">In Development</span></div>
+          <p>3-run evaluation with a hashrate coefficient-of-variation ceiling to detect unstable results.</p>
+        </div>
+        <div class="card">
+          <div class="card-top"><h3>External power evidence</h3><span class="badge badge--dev">In Development</span></div>
+          <p>Optional ingestion of external power-meter samples where on-device power telemetry is unavailable.</p>
+        </div>
+        <div class="card">
+          <div class="card-top"><h3>Timestamp alignment</h3><span class="badge badge--implemented">Implemented</span></div>
+          <p>Unix-time alignment between benchmark execution, telemetry samples, and external evidence.</p>
+        </div>
+        <div class="card">
+          <div class="card-top"><h3>Numerical energy integration</h3><span class="badge badge--dev">In Development</span></div>
+          <p>Energy consumption derived by numerically integrating power samples over the run window.</p>
+        </div>
+        <div class="card">
+          <div class="card-top"><h3>Fail-closed authorization</h3><span class="badge badge--implemented">Implemented</span></div>
+          <p>Economic and execution authorization default to disabled until their own gates are separately satisfied.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= CURRENT TECHNICAL STATE ============================= -->
+  <section id="status">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Current technical state</p>
+        <h2 class="section-title">What exists today, stated conservatively</h2>
+        <p class="section-lede">Status badges reflect the current engineering state of each component. Nothing here is claimed as production-ready unless marked Validated.</p>
+      </div>
+      <div class="table-wrap">
+        <table class="metric-table">
+          <thead>
+            <tr><th>Component</th><th>Status</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>RandomX integration</td><td><span class="badge badge--dev">In Development</span></td></tr>
+            <tr><td>4-thread qualification harness</td><td><span class="badge badge--implemented">Implemented</span></td></tr>
+            <tr><td>Continuous 500 ms telemetry</td><td><span class="badge badge--implemented">Implemented</span></td></tr>
+            <tr><td>Thermal monitoring</td><td><span class="badge badge--implemented">Implemented</span></td></tr>
+            <tr><td>DVFS / frequency monitoring</td><td><span class="badge badge--implemented">Implemented</span></td></tr>
+            <tr><td>Artifact SHA-256 integrity checks</td><td><span class="badge badge--implemented">Implemented</span></td></tr>
+            <tr><td>External power evidence adapter</td><td><span class="badge badge--dev">In Development</span></td></tr>
+            <tr><td>External power CSV ingestion</td><td><span class="badge badge--dev">In Development</span></td></tr>
+            <tr><td>3-run repeatability evaluation</td><td><span class="badge badge--dev">In Development</span></td></tr>
+            <tr><td>Fail-closed economics authorization</td><td><span class="badge badge--implemented">Implemented</span></td></tr>
+            <tr><td>Fail-closed execution authorization</td><td><span class="badge badge--implemented">Implemented</span></td></tr>
+            <tr><td>Public benchmark results</td><td><span class="badge badge--planned">Not Yet Verified</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= RANDOMX ============================= -->
+  <section id="randomx">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Execution path</p>
+        <h2 class="section-title">RandomX: the current execution path under evaluation</h2>
+        <p class="section-lede">RandomX is a proof-of-work algorithm designed for general-purpose CPUs. It is the mining execution path currently under engineering evaluation within SYJ Mining Platform.</p>
+      </div>
+      <div class="grid grid--4">
+        <div class="card"><h3>CPU-oriented execution</h3><p>Designed to run on general-purpose CPU hardware rather than specialized accelerators.</p></div>
+        <div class="card"><h3>Controlled thread configuration</h3><p>The current qualification harness runs a fixed 4-thread configuration for comparability across runs.</p></div>
+        <div class="card"><h3>Benchmark verification</h3><p>Each run is verified against the qualification gates described below before results are trusted.</p></div>
+        <div class="card"><h3>Telemetry collection</h3><p>Thermal, frequency, and (where available) power telemetry are captured for every run.</p></div>
+      </div>
+      <p class="section-lede" style="margin-top:28px;">Broad coin, operating system, and hardware support are <strong>not yet publicly verified</strong> and are not claimed here.</p>
+    </div>
+  </section>
+
+  <!-- ============================= QUALIFICATION & VERIFICATION ============================= -->
+  <section id="verification">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Methodology</p>
+        <h2 class="section-title">Qualification &amp; verification</h2>
+        <p class="section-lede">A controlled campaign of repeated runs, bounded by explicit thermal, statistical, and integrity thresholds. Measurement qualification does not automatically authorize economic operation.</p>
+      </div>
+      <div class="grid grid--4">
+        <div class="card"><h3>3 runs</h3><p>Minimum controlled runs per qualification campaign.</p></div>
+        <div class="card"><h3>4 threads</h3><p>Fixed thread configuration for comparable results.</p></div>
+        <div class="card"><h3>500 ms telemetry</h3><p>Sampling interval for thermal and frequency capture.</p></div>
+        <div class="card"><h3>Cooldown gate ≤ 45°C</h3><p>Required idle temperature before a run may begin.</p></div>
+        <div class="card"><h3>Qualification ceiling &lt; 65°C</h3><p>Maximum thermal threshold during a qualifying run.</p></div>
+        <div class="card"><h3>Hashrate CV ≤ 3%</h3><p>Coefficient of variation ceiling across repeated runs.</p></div>
+        <div class="card"><h3>External power evidence</h3><p>Optional ingestion of independent power-meter samples.</p></div>
+        <div class="card"><h3>Max power sample gap ≤ 2s</h3><p>Maximum allowed gap between external power samples.</p></div>
+        <div class="card"><h3>Pre-run artifact hash</h3><p>SHA-256 verification of the artifact before execution.</p></div>
+        <div class="card"><h3>Post-run artifact hash</h3><p>SHA-256 verification of the artifact after execution.</p></div>
+        <div class="card"><h3>Raw evidence capture</h3><p>Raw stdout/stderr retained alongside timestamped telemetry.</p></div>
+        <div class="card"><h3>Atomic evidence manifest</h3><p>All evidence for a run is committed as a single atomic manifest.</p></div>
+      </div>
+      <p class="section-lede" style="margin-top:28px;"><strong>Measurement qualification does not automatically authorize economic operation.</strong> This separation is a core trust principle of the project — see <a class="kicker-link" href="#security">Fail-Closed by Design</a>.</p>
+    </div>
+  </section>
+
+  <!-- ============================= FAIL-CLOSED ============================= -->
+  <section id="security">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Trust principle</p>
+        <h2 class="section-title">Fail-closed by design</h2>
+        <p class="section-lede">The qualification architecture intentionally keeps economic and execution behavior disabled until independent gates are satisfied — and those locks are not something this landing page can bypass.</p>
+      </div>
+      <div class="lock-panel">
+        <div class="lock-card">
+          <h3>economics_authorized</h3>
+          <p>Remains <strong>false</strong> until a separate economic-evaluation gate is passed.</p>
+          <code>economics_authorized = false</code>
+        </div>
+        <div class="lock-card">
+          <h3>execution_enabled</h3>
+          <p>Remains <strong>false</strong> until a separate execution-authorization gate is passed.</p>
+          <code>execution_enabled = false</code>
+        </div>
+      </div>
+      <p class="section-lede" style="margin-top:28px;">
+        Measurement ≠ economic authorization. Benchmark ≠ profitability. Qualification ≠ autonomous
+        mining. Failed measurement conditions terminate the qualification path rather than being
+        silently bypassed.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================= PERFORMANCE ============================= -->
+  <section id="performance">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Benchmarks</p>
+        <h2 class="section-title">Performance data</h2>
+        <p class="section-lede">Verified benchmark results will be published when the controlled qualification campaign produces reproducible evidence. No figures are estimated or fabricated in the meantime.</p>
+      </div>
+      <div class="table-wrap">
+        <table class="metric-table">
+          <thead><tr><th>Metric</th><th>Value</th></tr></thead>
+          <tbody>
+            <tr><td>Hashrate (mean)</td><td class="pending">Pending verified measurement</td></tr>
+            <tr><td>Hashrate (std. deviation)</td><td class="pending">Pending verified measurement</td></tr>
+            <tr><td>Hashrate coefficient of variation</td><td class="pending">Pending verified measurement</td></tr>
+            <tr><td>Maximum temperature</td><td class="pending">Pending verified measurement</td></tr>
+            <tr><td>Average power</td><td class="pending">Pending verified measurement</td></tr>
+            <tr><td>Integrated energy</td><td class="pending">Pending verified measurement</td></tr>
+            <tr><td>Run duration</td><td class="pending">Pending verified measurement</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= POWER MEASUREMENT ============================= -->
+  <section id="power">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Power measurement</p>
+        <h2 class="section-title">External power evidence</h2>
+        <p class="section-lede">On-device power telemetry can be unavailable on some platforms because of Android/Linux permission boundaries. External power evidence is supported as a way to still ground energy figures in real measurement.</p>
+      </div>
+      <div class="grid grid--2">
+        <div class="card">
+          <h3>Sample schema</h3>
+          <p><code class="mono">timestamp</code>, <code class="mono">voltage_v</code>, <code class="mono">current_a</code>, <code class="mono">watts</code> — one record per sample, timestamped in Unix time.</p>
+        </div>
+        <div class="card">
+          <h3>Coverage &amp; integration</h3>
+          <p>Samples must overlap the benchmark window with a maximum gap of 2 seconds. Energy is derived by numerically integrating the power series.</p>
+        </div>
+      </div>
+      <p class="section-lede" style="margin-top:24px;">No power meter is currently claimed as connected. This section describes the supported evidence format, not a live reading.</p>
+    </div>
+  </section>
+
+  <!-- ============================= ARCHITECTURE ============================= -->
+  <section id="architecture">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Architecture</p>
+        <h2 class="section-title">Qualification pipeline</h2>
+        <p class="section-lede">Each stage must pass before the next begins. A failed gate terminates the qualification path rather than proceeding with partial evidence.</p>
+      </div>
+      <div class="pipeline">
+        <div class="pipe-step"><span class="pipe-index">01</span><div><div class="pipe-name">Artifact</div><div class="pipe-desc">The execution binary under qualification.</div></div><span class="pipe-fail">Halts on hash mismatch</span></div>
+        <div class="pipe-step"><span class="pipe-index">02</span><div><div class="pipe-name">Integrity verification</div><div class="pipe-desc">SHA-256 check before execution begins.</div></div><span class="pipe-fail">Halts on hash mismatch</span></div>
+        <div class="pipe-step"><span class="pipe-index">03</span><div><div class="pipe-name">Cooldown gate</div><div class="pipe-desc">Idle temperature must be ≤ 45°C.</div></div><span class="pipe-fail">Halts if over threshold</span></div>
+        <div class="pipe-step"><span class="pipe-index">04</span><div><div class="pipe-name">4T benchmark</div><div class="pipe-desc">Fixed 4-thread RandomX execution run.</div></div><span class="pipe-fail">Halts on crash</span></div>
+        <div class="pipe-step"><span class="pipe-index">05</span><div><div class="pipe-name">Continuous telemetry</div><div class="pipe-desc">500 ms thermal and DVFS sampling.</div></div><span class="pipe-fail">Halts on capture failure</span></div>
+        <div class="pipe-step"><span class="pipe-index">06</span><div><div class="pipe-name">External power evidence</div><div class="pipe-desc">Optional CSV ingestion, gap-checked.</div></div><span class="pipe-fail">Flags on gap &gt; 2s</span></div>
+        <div class="pipe-step"><span class="pipe-index">07</span><div><div class="pipe-name">Run validation</div><div class="pipe-desc">Post-run artifact hash and evidence check.</div></div><span class="pipe-fail">Halts on hash mismatch</span></div>
+        <div class="pipe-step"><span class="pipe-index">08</span><div><div class="pipe-name">3-run repeatability analysis</div><div class="pipe-desc">Hashrate CV computed across runs.</div></div><span class="pipe-fail">Halts if CV &gt; 3%</span></div>
+        <div class="pipe-step"><span class="pipe-index">09</span><div><div class="pipe-name">Measurement gate</div><div class="pipe-desc">All prior evidence reviewed as a single manifest.</div></div><span class="pipe-fail">Halts on any open gate</span></div>
+        <div class="pipe-step"><span class="pipe-index">10</span><div><div class="pipe-name">Economic evaluation</div><div class="pipe-desc">Separate, independent gate — not automatic.</div></div><span class="pipe-fail">economics_authorized = false</span></div>
+        <div class="pipe-step"><span class="pipe-index">11</span><div><div class="pipe-name">Execution authorization</div><div class="pipe-desc">Separate, independent gate — not automatic.</div></div><span class="pipe-fail">execution_enabled = false</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= ROADMAP ============================= -->
+  <section id="roadmap">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Roadmap</p>
+        <h2 class="section-title">Where the project is headed</h2>
+        <p class="section-lede">No dates are assigned. Stages are listed in order of dependency, not by calendar commitment.</p>
+      </div>
+      <div class="roadmap">
+        <div class="roadmap-rail">
+          <div class="roadmap-item is-current">
+            <div class="roadmap-stage">Current</div>
+            <div class="roadmap-title">Engineering &amp; qualification infrastructure</div>
+            <div class="roadmap-desc">Building and hardening the artifact-integrity, telemetry, and gating harness described in Architecture.</div>
+          </div>
+          <div class="roadmap-item">
+            <div class="roadmap-stage">Next</div>
+            <div class="roadmap-title">Live external power evidence campaign</div>
+            <div class="roadmap-desc">Collecting real external power samples aligned to benchmark windows.</div>
+          </div>
+          <div class="roadmap-item">
+            <div class="roadmap-stage">Then</div>
+            <div class="roadmap-title">Repeatability validation</div>
+            <div class="roadmap-desc">Running the 3-run coefficient-of-variation campaign to qualifying completion.</div>
+          </div>
+          <div class="roadmap-item">
+            <div class="roadmap-stage">Then</div>
+            <div class="roadmap-title">Economic evaluation</div>
+            <div class="roadmap-desc">A separate, independent review of economic viability — distinct from measurement qualification.</div>
+          </div>
+          <div class="roadmap-item">
+            <div class="roadmap-stage">Future</div>
+            <div class="roadmap-title">Productionization</div>
+            <div class="roadmap-desc">Hardening for broader, publicly documented deployment once prior gates are satisfied.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= GITHUB / RELEASES ============================= -->
+  <section id="source">
+    <div class="wrap">
+      <div class="grid grid--2">
+        <div>
+          <p class="eyebrow">Source &amp; engineering transparency</p>
+          <h2 class="section-title">View source on GitHub</h2>
+          <p class="section-lede">The repository is the project's engineering record: source visibility, development status, and — as they land — verification evidence and release notes.</p>
+          <div class="hero-ctas" style="margin-top:24px;">
+            <a class="btn btn--primary" href="https://github.com/SHalimoosavi/SYJ-Mining" target="_blank" rel="noopener">View Source on GitHub</a>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Releases / downloads</h3>
+          <p>Public release availability will be published here when available. No release, version number, or download link is claimed at this time.</p>
+          <span class="badge badge--planned" style="margin-top:12px;">Not Yet Verified</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= FAQ ============================= -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">FAQ</p>
+        <h2 class="section-title">Frequently asked questions</h2>
+      </div>
+      <div>
+        <details class="faq-item" open>
+          <summary>What is SYJ Mining Platform?</summary>
+          <p>SYJ Mining Platform is an engineering-focused mining software project developed by SAYANJALI NEXUS PRIVATE LIMITED. It emphasizes controlled execution, benchmark verification, hardware telemetry, artifact integrity, and evidence-driven qualification.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What is RandomX?</summary>
+          <p>RandomX is a proof-of-work algorithm designed for general-purpose CPUs. It is the current mining execution path under engineering evaluation within SYJ Mining Platform.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Is SYJ Mining Platform open source?</summary>
+          <p>The project is developed in the open at the linked GitHub repository. Check the repository directly for the current license file before assuming specific reuse rights.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What hardware does SYJ Mining Platform support?</summary>
+          <p>Hardware and operating system support is not yet publicly verified. Confirmed configurations will be published once verified.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How does SYJ Mining Platform verify benchmark integrity?</summary>
+          <p>Each qualification run performs pre-run and post-run SHA-256 verification of the execution artifact, alongside timestamped telemetry and raw stdout/stderr capture.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How does the qualification process work?</summary>
+          <p>A controlled campaign of runs passes through ordered gates — integrity verification, cooldown, benchmark execution, telemetry, power evidence, run validation, and repeatability analysis — described in full in <a class="kicker-link" href="#architecture">Architecture</a>.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How is CPU temperature measured?</summary>
+          <p>Continuous 500 ms thermal telemetry is captured for the duration of each qualification run, with a cooldown gate of ≤ 45°C before a run may start and a qualification ceiling of &lt; 65°C during the run.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How is CPU frequency measured?</summary>
+          <p>DVFS (dynamic voltage and frequency scaling) state is sampled alongside thermal telemetry at the same 500 ms interval.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How is power consumption measured?</summary>
+          <p>Where on-device power telemetry is unavailable due to platform permission boundaries, external power evidence — timestamped voltage, current, and wattage samples — is ingested and numerically integrated into an energy figure.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What is external power evidence?</summary>
+          <p>A CSV of timestamped <code class="mono">voltage_v</code>, <code class="mono">current_a</code>, and <code class="mono">watts</code> samples from an independent power meter, aligned to the benchmark window with a maximum sample gap of 2 seconds.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How is hashrate repeatability evaluated?</summary>
+          <p>By running a 3-run campaign under fixed conditions and computing the coefficient of variation across the resulting hashrate measurements.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What does a 3% hashrate CV mean?</summary>
+          <p>It is the maximum allowed coefficient of variation across the 3-run repeatability campaign — a run set with higher variation does not pass the repeatability gate.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Does measurement qualification automatically enable mining?</summary>
+          <p>No. Measurement qualification and economic/execution authorization are intentionally separate gates. Passing qualification does not set <code class="mono">economics_authorized</code> or <code class="mono">execution_enabled</code> to true.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Does SYJ Mining Platform guarantee profitability?</summary>
+          <p>No. The project does not claim or guarantee mining profitability at any point in this documentation.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Where is the source code?</summary>
+          <p>At <a class="kicker-link" href="https://github.com/SHalimoosavi/SYJ-Mining" target="_blank" rel="noopener">github.com/SHalimoosavi/SYJ-Mining</a>.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Where can I follow development?</summary>
+          <p>Through commits, issues, and releases on the GitHub repository linked throughout this page.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4>SYJ Mining Platform</h4>
+        <p style="color:var(--text-muted); font-size:14px; max-width:32ch;">Engineering-first mining software by SAYANJALI NEXUS PRIVATE LIMITED.</p>
+      </div>
+      <div>
+        <h4>Project</h4>
+        <ul>
+          <li><a href="#platform">Platform</a></li>
+          <li><a href="#roadmap">Roadmap</a></li>
+          <li><a href="#security">Security</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#technical-overview">Documentation</a></li>
+          <li><a href="#verification">Verification</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Source</h4>
+        <ul>
+          <li><a href="https://github.com/SHalimoosavi/SYJ-Mining" target="_blank" rel="noopener">GitHub Repository ↗</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="current-year">2026</span> SAYANJALI NEXUS PRIVATE LIMITED</span>
+      <span>Development build — no production claims implied</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>

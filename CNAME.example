@@ -1,0 +1,20 @@
+# This is NOT an active CNAME file — GitHub Pages will ignore it as-is.
+#
+# No custom domain is currently configured or claimed for this project.
+# The site is expected to deploy at:
+#
+#   https://shalimoosavi.github.io/SYJ-Mining/
+#
+# If you later configure a custom domain in
+# Settings → Pages → Custom domain, GitHub will create a real file
+# named `CNAME` (no extension) at the repository root containing only
+# your domain, e.g.:
+#
+#   mining.example.com
+#
+# After adding a real CNAME file, update these to match the new domain:
+#   - <link rel="canonical"> and og:url / twitter:image in index.html
+#   - SITE_URL in README.md and scripts/validate_site.py
+#   - sitemap.xml <loc>
+#   - robots.txt Sitemap: line
+#   - SEO/structured-data.json @id and url fields
