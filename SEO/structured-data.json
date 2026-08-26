@@ -1,0 +1,89 @@
+{
+  "_comment": "Source-of-truth reference copy of the JSON-LD embedded in index.html's <head>. If you edit one, edit both — this file is not fetched by the page at runtime.",
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://shalimoosavi.github.io/SYJ-Mining/#organization",
+      "name": "SAYANJALI NEXUS PRIVATE LIMITED",
+      "url": "https://shalimoosavi.github.io/SYJ-Mining/",
+      "sameAs": [
+        "https://github.com/SHalimoosavi",
+        "https://github.com/SHalimoosavi/SYJ-Mining"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://shalimoosavi.github.io/SYJ-Mining/#website",
+      "url": "https://shalimoosavi.github.io/SYJ-Mining/",
+      "name": "SYJ Mining Platform",
+      "publisher": { "@id": "https://shalimoosavi.github.io/SYJ-Mining/#organization" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://shalimoosavi.github.io/SYJ-Mining/#software",
+      "name": "SYJ Mining Platform",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Not yet publicly verified",
+      "softwareVersion": "In development",
+      "description": "An engineering-focused mining software project emphasizing controlled execution, benchmark verification, hardware telemetry, artifact integrity, and evidence-driven qualification.",
+      "author": { "@id": "https://shalimoosavi.github.io/SYJ-Mining/#organization" },
+      "codeRepository": "https://github.com/SHalimoosavi/SYJ-Mining",
+      "url": "https://shalimoosavi.github.io/SYJ-Mining/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://shalimoosavi.github.io/SYJ-Mining/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://shalimoosavi.github.io/SYJ-Mining/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://shalimoosavi.github.io/SYJ-Mining/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is SYJ Mining Platform?",
+          "acceptedAnswer": { "@type": "Answer", "text": "SYJ Mining Platform is an engineering-focused mining software project developed by SAYANJALI NEXUS PRIVATE LIMITED. It emphasizes controlled execution, benchmark verification, hardware telemetry, artifact integrity, and evidence-driven qualification rather than speculative performance claims." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is RandomX?",
+          "acceptedAnswer": { "@type": "Answer", "text": "RandomX is a proof-of-work algorithm designed for general-purpose CPUs. It is the current mining execution path under engineering evaluation within SYJ Mining Platform." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is SYJ Mining Platform open source?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The project's source is developed in the open at github.com/SHalimoosavi/SYJ-Mining. Formal licensing terms will be published in the repository; check the repository directly for the current license file before assuming reuse rights." }
+        },
+        {
+          "@type": "Question",
+          "name": "What hardware does SYJ Mining Platform support?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Hardware and operating system support is not yet publicly verified. The current qualification harness targets general-purpose CPU execution; specific supported configurations will be published once confirmed." }
+        },
+        {
+          "@type": "Question",
+          "name": "How does SYJ Mining Platform verify benchmark integrity?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Every qualification run performs pre-run and post-run SHA-256 verification of the execution artifact, alongside timestamped telemetry and raw stdout/stderr capture, so results can be traced back to a known, unmodified binary." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does measurement qualification automatically enable mining?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. Measurement qualification is intentionally separated from economic and execution authorization. A qualified benchmark does not by itself set economics_authorized or execution_enabled to true." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does SYJ Mining Platform guarantee profitability?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. The project does not claim or guarantee mining profitability. Its scope is measurement, verification, and qualification methodology, not financial return." }
+        },
+        {
+          "@type": "Question",
+          "name": "Where is the source code?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The source repository is at https://github.com/SHalimoosavi/SYJ-Mining." }
+        }
+      ]
+    }
+  ]
+}
