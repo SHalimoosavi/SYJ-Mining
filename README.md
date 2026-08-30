@@ -2,7 +2,7 @@
 
 Engineering-first mining software by **SAYANJALI NEXUS PRIVATE LIMITED**.
 
-Repository: https://github.com/SHalimoosavi/SYJ-Mining
+Repository: https://github.com/SHalimoosavi/SYJ-MINE
 
 This repository contains the static, GitHub Pages–compatible landing website
 for SYJ Mining Platform. It is HTML/CSS/vanilla JS only — no backend, no
